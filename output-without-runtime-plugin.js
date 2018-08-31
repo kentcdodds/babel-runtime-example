@@ -31,6 +31,42 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var myMap = new WeakMap();
+
+function stuff() {
+  return _stuff.apply(this, arguments);
+}
+
+function _stuff() {
+  _stuff = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    var greeting;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return Promise.resolve('hi');
+
+          case 2:
+            greeting = _context.sent;
+            return _context.abrupt("return", greeting);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+  return _stuff.apply(this, arguments);
+}
+
 var Counter =
 /*#__PURE__*/
 function (_React$Component) {
@@ -78,4 +114,3 @@ function (_React$Component) {
 }(_react.default.Component);
 
 exports.Counter = Counter;
-

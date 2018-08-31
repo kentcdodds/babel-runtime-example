@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:runtime && npm run build:no-runtime",
-    "build:runtime": "babel --config-file ./.babelrc-with-runtime-plugin.js --out-file output-with-runtime-plugin.js",
-    "build:no-runtime": "babel --config-file ./.babelrc-without-runtime-plugin.js input.js --out-file output-without-runtime-plugin.js"
+    "build:runtime": "babel --config-file ./.babelrc-with-runtime-plugin.js --out-file output-with-runtime-plugin.js  input.js",
+    "build:no-runtime": "babel --config-file ./.babelrc-without-runtime-plugin.js --out-file output-without-runtime-plugin.js input.js"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",

@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Counter = void 0;
 
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -23,7 +25,41 @@ var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/hel
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
 var _react = _interopRequireDefault(require("react"));
+
+var myMap = new WeakMap();
+
+function stuff() {
+  return _stuff.apply(this, arguments);
+}
+
+function _stuff() {
+  _stuff = (0, _asyncToGenerator2.default)(
+  /*#__PURE__*/
+  _regenerator.default.mark(function _callee() {
+    var greeting;
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return Promise.resolve('hi');
+
+          case 2:
+            greeting = _context.sent;
+            return _context.abrupt("return", greeting);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, this);
+  }));
+  return _stuff.apply(this, arguments);
+}
 
 var Counter =
 /*#__PURE__*/
@@ -68,4 +104,3 @@ function (_React$Component) {
 }(_react.default.Component);
 
 exports.Counter = Counter;
-
