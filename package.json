@@ -1,0 +1,22 @@
+{
+  "name": "babel-runtime-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:runtime && npm run build:no-runtime",
+    "build:runtime": "babel --config-file ./.babelrc-with-runtime-plugin.js --out-file output-with-runtime-plugin.js",
+    "build:no-runtime": "babel --config-file ./.babelrc-without-runtime-plugin.js input.js --out-file output-without-runtime-plugin.js"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
